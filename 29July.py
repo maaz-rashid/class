@@ -12,8 +12,8 @@ else:
     print("Go home.")
 
 #%%
-# weight = eval(input("Enter your weight: "))
-# print(type(weight))
+weight = eval(input("Enter your weight: "))
+print(type(weight))
 
 #%%
 cities = ["Atlanta","London"]
@@ -33,17 +33,17 @@ print(cities)
 print(len(cities))
 cities.index("Karachi")
 print(cities)
-
+#%%
 #concatinate 2 lists
 cities = cities + ["Lahore", "Islamabad", "Peshawar"]
 print(cities)
-
+#%%
 #slicing lists
 print(cities[2:])
 print(cities[2:4])
 print(cities[-1:])
 print(cities[-4:-2])
-
+#%%
 #remove from list
 del cities[3]
 print(cities)
