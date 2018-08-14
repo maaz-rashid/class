@@ -147,3 +147,97 @@ ans = []
 for d in inlist.split(","):
     ans.append(str(int(math.sqrt((2*c*int(d)/h)))))
 print( ",".join(ans))
+
+
+# Question 7
+# Level 2
+
+# Question:
+# Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional array. The element value in the i-th row and j-th column of the array should be i*j.
+# Note: i=0,1.., X-1; j=0,1,¡­Y-1.
+# Example
+# Suppose the following inputs are given to the program:
+# 3,5
+# Then, the output of the program should be:
+# [[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]] 
+
+# Hints:
+# Note: In case of input data being supplied to the question, it should be assumed to be a console input in a comma-separated form.
+
+# Solution:
+
+multiples = input("Enter two comma separated numbers: ")
+nums = multiples.split(",")
+anslist = []
+for i in range(int(nums[0])):
+    tmplist = []
+    for j in range(int(nums[1])):
+        tmplist.append(i*j)
+    anslist.append(tmplist)
+print(anslist)
+
+
+#----------------------------------------#
+# Question 8
+# Level 2
+
+# Question:
+# Write a program that accepts a comma separated sequence of words as input and prints the words in a comma-separated sequence after sorting them alphabetically.
+# Suppose the following input is supplied to the program:
+# without,hello,bag,world
+# Then, the output should be:
+# bag,hello,without,world
+
+# Hints:
+# In case of input data being supplied to the question, it should be assumed to be a console input.
+
+# Solution:
+string = input("Enter some words separated by comma: ")
+word_list = string.split(",")
+word_list.sort()
+print(word_list)
+
+#----------------------------------------#
+# Question 9
+# Level 2
+
+# Question£º
+# Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalized.
+# Suppose the following input is supplied to the program:
+# Hello world
+# Practice makes perfect
+# Then, the output should be:
+# HELLO WORLD
+# PRACTICE MAKES PERFECT
+
+# Hints:
+# In case of input data being supplied to the question, it should be assumed to be a console input.
+
+# Solution:
+while True:
+    s = input("Enter some text: ")
+    if s:
+        print(s.upper())
+    else:
+        break
+
+#----------------------------------------#
+# Question 10
+# Level 2
+
+# Question:
+# Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and sorting them alphanumerically.
+# Suppose the following input is supplied to the program:
+# hello world and practice makes perfect and hello world again
+# Then, the output should be:
+# again and hello makes perfect practice world
+
+# Hints:
+# In case of input data being supplied to the question, it should be assumed to be a console input.
+# We use set container to remove duplicated data automatically and then use sorted() to sort the data.
+
+# Solution:
+string = input("Enter a sentence: ")
+word_list = string.split()
+print(" ".join(sorted(set(word_list))))
+
