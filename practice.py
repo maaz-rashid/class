@@ -360,3 +360,115 @@ print(f"LOWER CASE: {lowerCount}")
 # In case of input data being supplied to the question, it should be assumed to be a console input.
 
 # Solution:
+a = int(input("Enter a number: "))
+b = int(input("Enter range: "))
+def Power(num,pow):
+    return num**pow
+c=0
+for item in range(1,b+1):
+   c+=Power(a,item)
+
+print(c)
+
+
+
+a = input("Enter a number: ")
+b = int(input("Enter range: "))
+def Multiples(num,multipl):
+    return num*multipl
+c=0
+for item in range(1,b+1):
+       c+= int(Multiples(a,item))
+print(c)
+
+#----------------------------------------#
+# Question 16
+# Level 2
+
+# Question:
+# Use a list comprehension to square each odd number in a list. The list is input by a sequence of comma-separated numbers.
+# Suppose the following input is supplied to the program:
+# 1,2,3,4,5,6,7,8,9
+# Then, the output should be:
+# 1,3,5,7,9
+
+# Hints:
+# In case of input data being supplied to the question, it should be assumed to be a console input.
+
+# Solution:
+strInput = input("Enter comma separated numbers: ")
+list_of_odd_squares = [int(x)**2 for x in strInput.split(",") if int(x)%2 != 0 ]
+print( ",".join(list_of_odd_squares))
+
+#----------------------------------------#
+# Question 17
+# Level 2
+
+# Question:
+# Write a program that computes the net amount of a bank account based a transaction log from console input. The transaction log format is shown as following:
+# D 100
+# W 200
+# ¡­
+# D means deposit while W means withdrawal.
+# Suppose the following input is supplied to the program:
+# D 300
+# D 300
+# W 200
+# D 100
+# Then, the output should be:
+# 500
+
+# Hints:
+# In case of input data being supplied to the question, it should be assumed to be a console input.
+
+# Solution:
+balance = 0
+while True:
+    strInput = input("Enter transaction: ")
+    if not strInput:
+        break
+    vals = strInput.split()
+    if vals[0] == "D":
+        balance += int(vals[1])
+    elif vals[0] == "W":
+        balance -= int(vals[1])
+    else:
+        pass
+
+print(balance)
+
+#----------------------------------------#
+# Question 18
+# Level 3
+
+# Question:
+# A website requires the users to input username and password to register. Write a program to check the validity of password input by users.
+# Following are the criteria for checking the password:
+# 1. At least 1 letter between [a-z]
+# 2. At least 1 number between [0-9]
+# 1. At least 1 letter between [A-Z]
+# 3. At least 1 character from [$#@]
+# 4. Minimum length of transaction password: 6
+# 5. Maximum length of transaction password: 12
+# Your program should accept a sequence of comma separated passwords and will check them according to the above criteria. Passwords that match the criteria are to be printed, each separated by a comma.
+# Example
+# If the following passwords are given as input to the program:
+# ABd1234@1,a F1#,2w3E*,2We3345
+# Then, the output of the program should be:
+# ABd1234@1
+
+# Hints:
+# In case of input data being supplied to the question, it should be assumed to be a console input.
+import re
+strInput = input("Enter passwords: ")
+passwords = strInput.split(",")
+goodPass = []
+for pas in passwords:
+    if len(pas) > 6 and len(pas) < 13:
+        if re.match(r'[A-Za-z0-9]',pas):
+            if re.search("[$#@]",pas):
+                goodPass.append(pas)
+
+print(",".join(goodPass))
+
+
