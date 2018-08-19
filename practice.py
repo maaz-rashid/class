@@ -470,5 +470,3 @@ for pas in passwords:
                 goodPass.append(pas)
 
 print(",".join(goodPass))
-
-
