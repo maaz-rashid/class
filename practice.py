@@ -470,3 +470,166 @@ for pas in passwords:
                 goodPass.append(pas)
 
 print(",".join(goodPass))
+
+#----------------------------------------#
+# Question 19
+# Level 3
+
+# Question:
+# You are required to write a program to sort the (name, age, height) tuples by ascending order where name is string, age and height are numbers. The tuples are input by console. The sort criteria is:
+# 1: Sort based on name;
+# 2: Then sort based on age;
+# 3: Then sort by score.
+# The priority is that name > age > score.
+# If the following tuples are given as input to the program:
+# Tom,19,80
+# John,20,90
+# Jony,17,91
+# Jony,17,93
+# Json,21,85
+# Then, the output of the program should be:
+# [('John', '20', '90'), ('Jony', '17', '91'), ('Jony', '17', '93'), ('Json', '21', '85'), ('Tom', '19', '80')]
+
+# Hints:
+# In case of input data being supplied to the question, it should be assumed to be a console input.
+# We use itemgetter to enable multiple sort keys.
+
+# Solutions:
+from operator import itemgetter
+initList = []
+while True:
+    s = input("Enter info: ")
+    if not s:
+        break
+    initList.append(tuple(s.split("",)))
+
+print(sorted(initList, key=itemgetter(0,1,2)))
+
+
+#----------------------------------------#
+# Question 20
+# Level 3
+
+# Question:
+# Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n.
+
+# Hints:
+# Consider use yield
+
+# Solution:
+def divisble_by_seven(num):
+    for x in range(num+1):
+        if x%7==0:
+            yield x
+
+nums = divisble_by_seven(100)
+
+for n in nums:
+    print(n)
+
+#----------------------------------------#
+# Question 21
+# Level 3
+
+# Question
+# A robot moves in a plane starting from the original point (0,0). The robot can move toward UP, DOWN, LEFT and RIGHT with a given steps. The trace of robot movement is shown as the following:
+# UP 5
+# DOWN 3
+# LEFT 3
+# RIGHT 2
+# ¡­
+# The numbers after the direction are steps. Please write a program to compute the distance from current position after a sequence of movement and original point. If the distance is a float, then just print the nearest integer.
+# Example:
+# If the following tuples are given as input to the program:
+# UP 5
+# DOWN 3
+# LEFT 3
+# RIGHT 2
+# Then, the output of the program should be:
+# 2
+
+# Hints:
+# In case of input data being supplied to the question, it should be assumed to be a console input.
+
+# Solution:
+import math
+position = [0,0]
+while True:
+    s = input("Enter direction and steps: ")
+    if not s:
+        break
+    to_move = s.split()
+    direction = to_move[0]
+    steps = int(to_move[1])
+    if direction == "UP":
+        position[0] += steps
+    elif direction == "DOWN":
+        position[0] -= steps
+    elif direction == "LEFT":
+        position[1] -= steps
+    elif direction == "RIGHT":
+        position[1] += steps
+    else:
+        pass
+
+print(int(round(math.sqrt(position[0]**2 + position[1]**2))))
+
+#----------------------------------------#
+# Question 22
+# Level 3
+
+# Question:
+# Write a program to compute the frequency of the words from the input. The output should output after sorting the key alphanumerically. 
+# Suppose the following input is supplied to the program:
+# New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3.
+# Then, the output should be:
+# 2:2
+# 3.:1
+# 3?:1
+# New:1
+# Python:5
+# Read:1
+# and:1
+# between:1
+# choosing:1
+# or:2
+# to:1
+
+# Hints
+# In case of input data being supplied to the question, it should be assumed to be a console input.
+
+s = input("Enter a senctence: ")
+initList = s.split()
+freq = { x:initList.count(x) for x in initList }
+freq = { x:freq.get(x) for x in sorted(freq.keys())}
+for x in freq.keys():
+    print(f"{x} : {freq.get(x)}")
+
+
+from collections import Counter
+newdict = dict(Counter(initList))
+newdict = { x:newdict.get(x) for x in sorted(newdict.keys())}
+for x in newdict.keys():
+    print(f"{x} : {newdict.get(x)}")
+
+
+
+#----------------------------------------#
+# Question 23
+# level 1
+
+# Question:
+#     Write a method which can calculate square value of number
+
+# Hints:
+#     Using the ** operator
+
+def square(num):
+    print(f"square of {num} is: {num**2}")
+    return num**2
+
+while True:
+    s = input("Enter a number: ")
+    if not s:
+        break
+    square(int(s))
