@@ -633,3 +633,136 @@ while True:
     if not s:
         break
     square(int(s))
+
+
+print(abs().__doc__)
+print(int().__doc__)
+
+
+#----------------------------------------#
+# Question 25
+# Level 1
+
+# Question:
+#     Define a class, which have a class parameter and have a same instance parameter.
+
+# Hints:
+#     Define a instance parameter, need add it in __init__ method
+#     You can init a object with construct parameter or set the value later
+
+# Solution:
+
+class Person:
+    name = "Person Name"
+    def __init__(self, name = None):
+            self.name = name
+    
+jeff = Person("Jeffery")
+print(f"{Person.name}'s name is {jeff.name}")
+
+#----------------------------------------#
+# Question 26:
+# Define a function which can compute the sum of two numbers.
+
+# Hints:
+# Define a function with two numbers as arguments. You can compute the sum in the function and return the value.
+
+# Solution
+def sum(a,b):
+    return a+b
+
+print(f"{sum(4,4)}")
+
+#----------------------------------------#
+# Question 27:
+# Define a function that can convert a integer into a string and print it in console.
+
+# Hints:
+
+# Use str() to convert a number to string.
+
+# Solution
+
+def toStr(num):
+    print(str(num))
+
+toStr(8)
+
+#----------------------------------------#
+# Question 28:
+# Define a function that can receive two integral numbers in string form and compute their sum and then print it in console.
+
+# Hints:
+
+# Use int() to convert a string to integer.
+
+# Solution
+def sumOfStr(num1,num2):
+    print(int(num1) + int(num2))
+
+sumOfStr("4","5")
+
+#----------------------------------------#
+# Question 29:
+# Define a function that can accept two strings as input and concatenate them and then print it in console.
+
+# Hints:
+
+# Use + to concatenate the strings
+
+# Solution
+def concat(s1,s2):
+    print(s1+s2)
+
+concat("3","2")
+
+#----------------------------------------#
+# Question 30:
+# Define a function that can accept two strings as input and print the string with maximum length in console. If two strings have the same length, then the function should print al l strings line by line.
+
+# Hints:
+
+# Use len() function to get the length of a string
+
+# Solution
+def printLongest(s1,s2):
+    if len(s1)>len(s2):
+        print(s1)
+    elif len(s2)>len(s1):
+        print(s2)
+    else:
+        print(s1)
+        print(s2)
+
+printLongest("Hello","World")
+
+#----------------------------------------#
+# Question 31:
+# Define a function that can accept an integer number as input and print the "It is an even number" if the number is even, otherwise print "It is an odd number".
+# Hints:
+# Use % operator to check if a number is even or odd.
+
+# Solution
+def checkNum(num):
+    if num%2==0:
+        print("It's an even number.")
+    else:
+        print("It's an odd number.")
+
+checkNum(5)
+
+#----------------------------------------#
+# Question 32:
+# Define a function which can print a dictionary where the keys are numbers between 1 and 3 (both included) and the values are square of keys.
+
+# Hints:
+
+# Use dict[key]=value pattern to put entry into a dictionary.
+# Use ** operator to get power of a number.
+
+# Solution
+def dict1to3():
+    newdict = { x:x**2 for x in range(1,4) }
+    print(newdict)
+
+dict1to3()
