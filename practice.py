@@ -766,3 +766,344 @@ def dict1to3():
     print(newdict)
 
 dict1to3()
+
+#----------------------------------------#
+# Question 33:
+# Define a function which can print a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys.
+
+# Hints:
+
+# Use dict[key]=value pattern to put entry into a dictionary.
+# Use ** operator to get power of a number.
+# Use range() for loops.
+
+# Solution
+def dict1to20():
+    newdict = { x:x**2 for x in range(1,21) }
+    print(newdict)
+
+dict1to20()
+
+#----------------------------------------#
+# Question 34:
+# Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys. The function should just print the values only.
+
+# Hints:
+
+# Use dict[key]=value pattern to put entry into a dictionary.
+# Use ** operator to get power of a number.
+# Use range() for loops.
+# Use keys() to iterate keys in the dictionary. Also we can use item() to get key/value pairs.
+
+# Solution
+def dict1to20vals():
+    newdict = { x:x**2 for x in range(1,21) }
+    [print(v) for (k,v) in newdict.items()]
+
+dict1to20vals()
+
+#----------------------------------------#
+# Question 35:
+# Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys. The function should just print the keys only.
+
+# Hints:
+
+# Use dict[key]=value pattern to put entry into a dictionary.
+# Use ** operator to get power of a number.
+# Use range() for loops.
+# Use keys() to iterate keys in the dictionary. Also we can use item() to get key/value pairs.
+
+# Solution
+
+def dict1to20keys():
+    newdict = { x:x**2 for x in range(1,21) }
+    [print(k) for (k,v) in newdict.items()]
+
+dict1to20keys()
+
+#----------------------------------------#
+# Question 36:
+# Define a function which can generate and print a list where the values are square of numbers between 1 and 20 (both included).
+
+# Hints:
+
+# Use ** operator to get power of a number.
+# Use range() for loops.
+# Use list.append() to add values into a list.
+
+# Solution
+def lst1to20keys():
+    newlst = [x**2 for x in range(1,21)]
+    print(newlst)
+
+lst1to20keys()
+
+#----------------------------------------#
+# Question 37:
+# Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print the first 5 elements in the list.
+
+# Hints:
+
+# Use ** operator to get power of a number.
+# Use range() for loops.
+# Use list.append() to add values into a list.
+# Use [n1:n2] to slice a list
+
+# Solution
+def lst20top():
+    newlst = [x**2 for x in range(1,21)]
+    print(newlst[:5])
+
+lst20top()
+
+#----------------------------------------#
+# Question 38:
+# Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print the last 5 elements in the list.
+
+# Hints:
+
+# Use ** operator to get power of a number.
+# Use range() for loops.
+# Use list.append() to add values into a list.
+# Use [n1:n2] to slice a list
+
+# Solution
+def lst20last():
+    newlst = [x**2 for x in range(1,21)]
+    print(newlst[-5:])
+
+lst20last()
+
+#----------------------------------------#
+# Question 39:
+# Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included). Then the function needs to print all values except the first 5 elements in the list.
+
+# Hints:
+
+# Use ** operator to get power of a number.
+# Use range() for loops.
+# Use list.append() to add values into a list.
+# Use [n1:n2] to slice a list
+
+# Solution
+def lst20but5():
+    newlst = [x**2 for x in range(1,21)]
+    print(newlst[5:])
+
+lst20but5()
+
+#----------------------------------------#
+# Question 40:
+# Define a function which can generate and print a tuple where the value are square of numbers between 1 and 20 (both included). 
+
+# Hints:
+
+# Use ** operator to get power of a number.
+# Use range() for loops.
+# Use list.append() to add values into a list.
+# Use tuple() to get a tuple from a list.
+
+# Solution
+def lst20tuple():
+    newlst = [x**2 for x in range(1,21)]
+    print(tuple(newlst))
+
+lst20tuple()
+
+#----------------------------------------#
+# Question 41:
+# With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line. 
+
+# Hints:
+# Use [n1:n2] notation to get a slice from a tuple.
+
+# Solution:
+
+tupl = (1,2,3,4,5,6,7,8,9,10)
+print(tupl[:5])
+print(tupl[5:])
+
+#----------------------------------------#
+# Question 42:
+# Write a program to generate and print another tuple whose values are even numbers in the given tuple (1,2,3,4,5,6,7,8,9,10). 
+
+# Hints:
+# Use "for" to iterate the tuple
+# Use tuple() to generate a tuple from a list.
+
+# Solution
+tupl = (1,2,3,4,5,6,7,8,9,10)
+print(tuple([x for x in tupl if x%2==0]))
+
+#----------------------------------------#
+# Question 43:
+# Write a program which accepts a string as input to print "Yes" if the string is "yes" or "YES" or "Yes", otherwise print "No". 
+
+# Hints:
+# Use if statement to judge condition.
+
+# Solution:
+s = input()
+if s.upper()=="YES":
+    print("Yes")
+else:
+    print("No")
+
+#----------------------------------------#
+# Question 44:
+# Write a program which can filter even numbers in a list by using filter function. The list is: [1,2,3,4,5,6,7,8,9,10].
+
+# Hints:
+
+# Use filter() to filter some elements in a list.
+# Use lambda to define anonymous functions.
+
+# Solution:
+
+li = [1,2,3,4,5,6,7,8,9,10]
+evenNumbers = filter(lambda x: x%2==0, li)
+print(list(evenNumbers))
+
+#----------------------------------------#
+# Question 45:
+# Write a program which can map() to make a list whose elements are square of elements in [1,2,3,4,5,6,7,8,9,10].
+
+# Hints:
+
+# Use map() to generate a list.
+# Use lambda to define anonymous functions.
+
+# Solution
+li = [1,2,3,4,5,6,7,8,9,10]
+evenNumbers = filter(lambda x: x%2==0, li)
+print(list(evenNumbers))
+
+#----------------------------------------#
+# Question 46:
+# Write a program which can map() and filter() to make a list whose elements are square of even number in [1,2,3,4,5,6,7,8,9,10].
+
+# Hints:
+# Use map() to generate a list.
+# Use filter() to filter elements of a list.
+# Use lambda to define anonymous functions.
+
+# Solution
+li = [1,2,3,4,5,6,7,8,9,10]
+evenNumbers = map(lambda x: x**2, filter(lambda x: x%2==0, li))
+print(list(evenNumbers))
+
+#----------------------------------------#
+# Question 47:
+# Write a program which can filter() to make a list whose elements are even number between 1 and 20 (both included).
+
+# Hints:
+# Use filter() to filter elements of a list.
+# Use lambda to define anonymous functions.
+
+# Solution:
+evenNumbers = list(filter(lambda x: x%2==0, range(1,21)))
+print(evenNumbers)
+
+#----------------------------------------#
+# Question 48:
+# Write a program which can map() to make a list whose elements are square of numbers between 1 and 20 (both included).
+
+# Hints:
+# Use map() to generate a list.
+# Use lambda to define anonymous functions.
+
+# Solution
+evenNumbers = list(map(lambda x:x**2, range(1,21)))
+print(evenNumbers)
+
+
+#----------------------------------------#
+# Question 49:
+# Define a class named American which has a static method called printNationality.
+
+# Hints:
+# Use @staticmethod decorator to define class static method.
+
+# Solution
+
+class American(object):
+    @staticmethod
+    def printNationality():
+        print("American")
+    
+    def nationality(self):
+        print("American")
+
+
+anAmerican = American()
+anAmerican.printNationality()
+anAmerican.nationality()
+American.printNationality()
+American.nationality(anAmerican)
+
+
+#----------------------------------------#
+# Question 50:
+# Define a class named American and its subclass NewYorker. 
+
+# Hints:
+# Use class Subclass(ParentClass) to define a subclass.
+
+# Solution:
+class NewYorker(American):
+    pass
+
+
+#----------------------------------------#
+# Question 51:
+# Define a class named Circle which can be constructed by a radius. The Circle class has a method which can compute the area. 
+
+# Hints:
+
+# Use def methodName(self) to define a method.
+
+# Solution:
+class Circle(object):
+    def __init__(self, r):
+        self.radius = r
+    
+    def area(self):
+        print(2*self.radius*3.14)
+newCircle = Circle(3)
+newCircle.area()
+
+#----------------------------------------#
+# Question 52:
+# Define a class named Rectangle which can be constructed by a length and width. The Rectangle class has a method which can compute the area. 
+
+# Hints:
+# Use def methodName(self) to define a method.
+
+# Solution:
+class Rectangle(object):
+    def __init__(self,l,w):
+        self.length = l
+        self.width = w
+    
+    def area(self):
+        print(self.length*self.width)
+
+rect = Rectangle(3,5)
+rect.area()
+
+#----------------------------------------#
+# Question 53:
+# Define a class named Shape and its subclass Square. The Square class has an init function which takes a length as argument. Both classes have a area function which can print the area of the shape where Shape's area is 0 by default.
+
+# Hints:
+# To override a method in super class, we can define a method with the same name in the super class.
+
+# Solution:
+
+class Shape(object):
+    def __init__(self):
+        pass
+    
+    def area(self):
+        print(0)
+        
